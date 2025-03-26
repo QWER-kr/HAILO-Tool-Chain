@@ -2,7 +2,7 @@
 from hailo_sdk_client import ClientRunner
 
 # Define the ONNX model path and configuration
-onnx_path = "/content/best.onnx"
+onnx_path = "best.onnx"
 onnx_model_name = "yolov8n_renamed"
 chosen_hw_arch = "hailo8l"  # Specify the target hardware architecture
 

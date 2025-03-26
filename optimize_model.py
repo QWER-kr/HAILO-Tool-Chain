@@ -29,7 +29,7 @@ runner.load_model_script(alls)
 # Define a calibration dataset
 # Replace 'calib_dataset' with the actual dataset you're using for calibration
 # For example, if it's a directory of images, prepare the dataset accordingly
-calib_dataset = "/content/drive/MyDrive/yolov8_cal/processed_calibration_data.npy"
+calib_dataset = "./yolov8_cal/processed_calibration_data.npy"
 
 # Perform optimization with the calibration dataset
 runner.optimize(calib_dataset)

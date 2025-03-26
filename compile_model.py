@@ -5,7 +5,7 @@ import os
 # Define the quantized model HAR file
 model_name = "yolov8n_renamed"
 quantized_model_har_path = f"{model_name}_quantized_model.har"
-output_directory = "/content/drive/MyDrive/yolov8_cal"
+output_directory = "./yolov8_cal"
 
 os.makedirs(output_directory, exist_ok=True)
 

@@ -2,7 +2,7 @@
 from hailo_sdk_client import ClientRunner
 
 # Load the HAR file
-har_path = "/content/yolov8n_renamed_hailo_model.har"
+har_path = "yolov8n_renamed_hailo_model.har"
 
 runner = ClientRunner(har=har_path)
 
