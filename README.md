@@ -91,3 +91,25 @@ my_env/bin/python resource_monitor.py
 ```
 my_env/bin/hailo profiler yolov8n_quantized_model.har
 ```
+
+## Error
+
+### CASE : FP32 Model Convert to hef
+**optimzied_model.py**를 통해서 모델을 8-bit로 quantization하여야 **.hef** format으로 변환 가능한 것 같음
+```
+[error] Failed to compile the model: Model requires quantized weights in order to run on HW, but none were given. Did you forget to quantize?
+Traceback (most recent call last):
+  File "/home/hailo/compile_hef.py", line 15, in <module>
+    hef = runner.compile()
+  File "/home/hailo/my_env/lib/python3.10/site-packages/hailo_sdk_client/runner/client_runner.py", line 896, in compile
+    return self._compile()
+  File "/home/hailo/my_env/lib/python3.10/site-packages/hailo_sdk_common/states/states.py", line 16, in wrapped_func
+    return func(self, *args, **kwargs)
+  File "/home/hailo/my_env/lib/python3.10/site-packages/hailo_sdk_client/runner/client_runner.py", line 1113, in _compile
+    serialized_hef = self._sdk_backend.compile(fps, self.model_script, mapping_timeout)
+  File "/home/hailo/my_env/lib/python3.10/site-packages/hailo_sdk_client/sdk_backend/sdk_backend.py", line 1763, in compile
+    hef, mapped_graph_file = self._compile(fps, allocator_script, mapping_timeout)
+  File "/home/hailo/my_env/lib/python3.10/site-packages/hailo_sdk_client/sdk_backend/sdk_backend.py", line 1752, in _compile
+    raise BackendRuntimeException(
+hailo_sdk_client.sdk_backend.sdk_backend_exceptions.BackendRuntimeException: Model requires quantized weights in order to run on HW, but none were given. Did you forget to quantize?
+```
