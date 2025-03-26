@@ -1,6 +1,6 @@
 # HAILO-Tool-Chain
 
-## Environments
+## Preparation
 1. YOLOv8 Nano
 2. Roboflow Car Dataset (universitas-diponegoro-mb10s)
 3. Calibration on Roboflow Car Dataset
